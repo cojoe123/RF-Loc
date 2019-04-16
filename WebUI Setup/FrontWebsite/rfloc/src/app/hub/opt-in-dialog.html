@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Opt In Form</h1>
+<div mat-dialog-content>
+  <p>Enter your name:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.userName">
+  </mat-form-field>
+  <br>
+  <p>Enter you device Mac Address</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.mac_address">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Exit</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

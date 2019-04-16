@@ -1,0 +1,31 @@
+<br>
+<div class="summary">
+  <mat-card class="card-container">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>RF-Loc</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <p>
+        RF-Loc is a hardware/software system for locating individuals in emergency-response scenarios.
+        This is done by detecting the radio signals coming from their cell phones. There are three components within the
+        system:
+        the detectors, the manager-access point, and the system that hosts a database that is used by the user
+        interface.
+        Our system will use a protocol named MQTT which is a lightweight messaging protocol based on the
+        publish-subscribe messaging method.
+        Once the data has been inserted into the database, registered users can access data via a web site.
+        Information will include an overlay of the location of the detectors and, based on signal strength,
+        a circle approximating how close the individuals device is to the detector.
+        By design, the system is completely amnesic, which means that the physically accessible components hold no
+        usable personally identifying information,
+        this minimizes the privacy concerns related to intercepting wireless communications.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <!-- <button mat-button (click)="goToDash()">Dashboard</button> -->
+        <button mat-button (click)="openDialog()">Opt In</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

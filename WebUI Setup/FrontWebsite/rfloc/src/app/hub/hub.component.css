@@ -1,0 +1,29 @@
+.summary {
+  margin: auto;
+  max-width: 550px;
+  border: 3px solid black;
+  padding: 10px;
+  /* text-align: center; */
+}
+
+.login {
+  margin: auto;
+  width: 50%;
+  /* border: 3px solid black; */
+  padding: 10px;
+}
+
+.card-container {
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.header-image {
+  background-image: url('../../assets/RFLoc_Logo.PNG');
+  background-size: cover;
+}
+
+.mat-card-content {
+  /* background-color: slategray; */
+}

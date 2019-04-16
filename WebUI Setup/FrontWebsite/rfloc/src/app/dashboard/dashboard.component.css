@@ -1,0 +1,55 @@
+.grid {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+agm-map {
+    height: 550px;
+    width: 550px;
+}
+
+.dashboard {
+    margin: 0;
+    padding: 20px;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 20;
+    overflow: hidden;
+}
+
+li {
+    text-align: center;
+    /* display: inline-block; */
+    float: left;
+    padding: 16px;
+}
+
+/* Structure */
+
+table {
+    width: 100%;
+}
+
+.filter {
+    padding: 15px;
+    font-size: 14px;
+    width: 25%;
+}
+.logout {
+    overflow:  hidden;
+}
+
+.logout button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.mat-card {
+    background-color: slategray;
+  }

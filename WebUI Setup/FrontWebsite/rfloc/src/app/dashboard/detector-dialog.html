@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Pi Marker</h1>
+<div mat-dialog-content>
+  <p>Select a Detector</p>
+  <mat-form-field>
+    <mat-select [(value)]="selected">
+      <mat-option value="detector-1">Detector-1</mat-option>
+      <mat-option value="detector-2">Detector-2</mat-option>
+      <mat-option value="detector-3">Detector-3</mat-option>
+      <mat-option value="detector-4">Detector-4</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Exit</button>
+  <button mat-button [mat-dialog-close]="selected" cdkFocusInitial>Ok</button>
+</div>
