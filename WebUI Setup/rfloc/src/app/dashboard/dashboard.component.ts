@@ -48,6 +48,10 @@ export class DashboardComponent implements OnInit {
 
   public source;
 
+  public subscribeRequest: any = [];
+  public subHolder;
+  public subTable;
+
   // latitude, longitude, zoom values for map
   private lat: number;
   private lng: number;
@@ -91,9 +95,9 @@ export class DashboardComponent implements OnInit {
     this.err = false;
     this.newData = false;
     this.source = null;
-    const source = interval(10000);
+    const source = interval(8000);
     this.subscription = source.subscribe(val => this.updateMap(this.markers));
-    this.requestSubs = source.subscribe(val => this.apiService.listRequest());
+    this.requestSubs = source.subscribe(val => this.updateLogs());
   }
 
   ngOnDestroy() {
@@ -146,12 +150,40 @@ export class DashboardComponent implements OnInit {
         if (element.label == 'detector-1') {
           this.setRadius(element.label);
           element.radii = this.radius;
+        } else if (element.label == 'detector-2') {
+          this.setRadius(element.label);
+          element.radii = this.radius;
+        } else if (element.label == 'detector-3') {
+          this.setRadius(element.label);
+          element.radii = this.radius;
+        } else if (element.label == 'detector-4') {
+          this.setRadius(element.label);
+          element.radii = this.radius;
         }
         console.log('New Values ', element.label, ':', element.radii);
       });
     }
   }
 
+   /**
+   * updateLogs(): updates the logs table every 8 seconds
+   */
+  updateLogs() {
+    this.apiService.listRequestSubscription().subscribe(
+      data => {
+        this.subHolder = data;
+        let last = this.subHolder[this.subHolder.length - 1];
+        console.log(last.id);
+        if (this.subscribeRequest[this.subscribeRequest.length - 1] == last.mac_address || this.subscribeRequest == null) {
+          console.log('Same value found');
+        } else {
+          this.subscribeRequest.push(last.mac_address);
+        }
+        console.log(this.subscribeRequest);
+        this.subTable = new MatTableDataSource(this.subscribeRequest);
+        this.subHolder.paginator = this.paginator;
+      })
+  }
 
   /**
    * setRequestsTable(): takes endpoint data and creates table

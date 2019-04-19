@@ -78,6 +78,11 @@ export class ApiService {
     return this.http.get(this.ROOT_URL + '/probeRequests?detector=' + detector, { headers });
   }
 
+  public listRequestSubscription() {
+    let headers = new HttpHeaders().set('Authorization', 'JWT ' + this.token);
+    return this.http.get(this.ROOT_URL +  '/probeRequests/', { headers });
+  }
+
   /**
    * sendWhitelistRequest(): send post request with following parameters to the api
    * 
